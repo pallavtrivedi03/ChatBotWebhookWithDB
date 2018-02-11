@@ -1,0 +1,62 @@
+'use strict';
+
+var mongoose = require('mongoose');
+var TeamInfo = mongoose.model('TeamInfo');
+
+exports.getTeamStats = function(req, res) {
+
+  let teamToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.team ? req.body.result.parameters.team : 'Unknown';
+
+
+  TeamInfo.findOne({name:teamToSearch},function(err,teamExists)
+    {
+      if (err)
+      {
+        return res.json({
+            speech: 'Something went wrong!',
+            displayText: 'Something went wrong!',
+            source: 'get-team-stats'
+        });
+      }
+
+      if (teamExists)
+      {
+        return res.json({
+              speech: teamExists.description,
+              displayText: teamExists.description,
+              source: 'get-team-stats'
+          });
+      }
+      else {
+        console.log('team name is '+teamToSearch);
+        return res.json({
+              speech: 'Currently I am not having information about this team',
+              displayText: 'Currently I am not having information about this team',
+              source: 'get-team-stats'
+          });
+      }
+    });
+
+  //let reqUrl = encodeURI('http://theapache64.xyz:8080/movie_db/search?keyword=' + movieToSearch);
+  /*http.get(reqUrl, (responseFromAPI) => {
+
+      responseFromAPI.on('data', function (chunk) {
+          let movie = JSON.parse(chunk)['data'];
+          let dataToSend = movieToSearch === 'The Godfather' ? 'I don\'t have the required info on that. Here\'s some info on \'The Godfather\' instead.\n' : '';
+          dataToSend += movie.name + ' is a ' + movie.stars + ' starer ' + movie.genre + ' movie, released in ' + movie.year + '. It was directed by ' + movie.director;
+
+          return res.json({
+              speech: dataToSend,
+              displayText: dataToSend,
+              source: 'get-movie-details'
+          });
+
+      });
+  }, (error) => {
+      return res.json({
+          speech: 'Something went wrong!',
+          displayText: 'Something went wrong!',
+          source: 'get-movie-details'
+      });
+  });*/
+};

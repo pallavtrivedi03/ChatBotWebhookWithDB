@@ -1,2 +1,2 @@
-# ChatBotWebhookWithDB
-Same as chatbot web hook, but with DB
+# NBABotWebhook
+Webhook in node for NBA Bot

@@ -1,0 +1,24 @@
+{
+  "name": "chatbotwebhook",
+  "version": "1.0.0",
+  "description": "Webhook for chat bot",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "body-parser": "^1.18.2",
+    "mongoose": "^4.11.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pallavtrivedi03/NBABotWebhook"
+  },
+  "author": "Pallav Trivedi",
+  "license": "ISC"
+}
