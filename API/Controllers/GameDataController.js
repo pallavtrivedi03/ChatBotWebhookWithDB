@@ -7,8 +7,15 @@ exports.getTeamStats = function(req, res) {
 
   let teamToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.team ? req.body.result.parameters.team : 'Unknown';
 
+  /*let kings = new TeamInfo();
+  kings.name = "Sacramento Kings";
+  kings.description = "The Sacramento Kings are an American professional basketball team based in Sacramento, California. The Kings compete in the National Basketball Association as a member of the Western Conference Pacific Division.";
+  kings.save(function(err,billSaved)
+	{
+		if(err)	return err;
+	});*/
 
-  TeamInfo.findOne({name:teamToSearch},function(err,teamExists)
+TeamInfo.findOne({name:teamToSearch},function(err,teamExists)
     {
       if (err)
       {
