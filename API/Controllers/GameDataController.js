@@ -64,7 +64,7 @@ function getTeamStats(req,res)
 
 function getTeamSchedule(req,res)
 {
-  console.console.log("function me toh aya");
+  console.log("function me toh aya");
           return res.json({
               speech: 'Something went wrong!',
               displayText: 'Something went wrong!',
