@@ -11,7 +11,7 @@ module.exports = function(app) {
   });
 
   // registerUser Route
-  app.route('/get-team-stats')
-    .post(gameDataController.getTeamStats);
+  app.route('/')
+    .post(gameDataController.processRequest);
 
 };
