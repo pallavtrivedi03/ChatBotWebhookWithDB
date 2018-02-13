@@ -7,9 +7,11 @@ var TeamInfo = mongoose.model('TeamInfo');
 exports.processRequest = function(req, res) {
   if (req.body.result.action == "tell.about")
   {
+    console.log("gadha gadha gadha gadha");
       getTeamStats(req,res)
   }
   else if (req.body.result.action == "schedule") {
+    console.log("ghoda ghoda ghoda ghoda");
     return res.json({
           speech: 'I will tell the schedule soon',
           displayText: 'I will tell the schedule soon',
