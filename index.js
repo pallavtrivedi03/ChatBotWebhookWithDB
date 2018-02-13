@@ -6,7 +6,8 @@ http         = require('http'),
 config       = require('./config'),
 server       = express(),
 mongoose     = require('mongoose'),
-TeamInfo     = require('./API/Models/TeamInfo'); //created model loading here
+TeamInfo     = require('./API/Models/TeamInfo'), //created model loading here
+GameSchedule = require('./API/Models/GameSchedule');
 
 console.log(config.dbUrl);
 

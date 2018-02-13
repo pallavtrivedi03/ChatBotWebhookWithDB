@@ -2,19 +2,15 @@
 
 var mongoose = require('mongoose');
 var TeamInfo = mongoose.model('TeamInfo');
-
+var GameSchedule = mongoose.model('GameSchedule');
 
 exports.processRequest = function(req, res) {
-console.log("process request me aya");
 
-console.log("action hai "+req.body.result.action);
    if (req.body.result.action == "schedule") {
-    console.log("ghoda ghoda ghoda ghoda");
     getTeamSchedule(req,res)
   }
   else if (req.body.result.action == "tell.about")
   {
-    console.log("gadha gadha gadha gadha");
       getTeamStats(req,res)
   }
 };
@@ -64,12 +60,21 @@ function getTeamStats(req,res)
 
 function getTeamSchedule(req,res)
 {
-  console.log("function me toh aya");
-          return res.json({
-              speech: 'Something went wrong!',
-              displayText: 'Something went wrong!',
-              source: 'game schedule'
-          });
+  let gameSchedule = new GameSchedule();
+  gameSchedule.date = "Feb 9 2018";
+  gameSchedule.opponent = "Portland";
+  gameSchedule.hasBeenPlayed = true;
+  gameSchedule.isWinner = false;
+  gameSchedule.score = "118-100";
+  gameSchedule.save(function(err,billSaved)
+  {
+    if(err)	return err;
+  });
+          // return res.json({
+          //     speech: 'Something went wrong!',
+          //     displayText: 'Something went wrong!',
+          //     source: 'game schedule'
+          // });
 
 }
   //let reqUrl = encodeURI('http://theapache64.xyz:8080/movie_db/search?keyword=' + movieToSearch);
