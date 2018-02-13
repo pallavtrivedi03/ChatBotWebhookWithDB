@@ -5,18 +5,17 @@ var TeamInfo = mongoose.model('TeamInfo');
 
 
 exports.processRequest = function(req, res) {
-/*  if (req.body.result.action == "tell.about")
+console.log("process request me aya");
+
+console.log("action hai "+req.body.result.action);
+   if (req.body.result.action == "schedule") {
+    console.log("ghoda ghoda ghoda ghoda");
+    getTeamSchedule(req,res)
+  }
+  else if (req.body.result.action == "tell.about")
   {
     console.log("gadha gadha gadha gadha");
       getTeamStats(req,res)
-  }
-  else*/ if (req.body.result.action == "schedule") {
-    console.log("ghoda ghoda ghoda ghoda");
-    return res.json({
-          speech: 'I will tell the schedule soon',
-          displayText: 'I will tell the schedule soon',
-          source: 'game schedule'
-      });
   }
 };
 
@@ -63,6 +62,16 @@ function getTeamStats(req,res)
       });
 }
 
+function getTeamSchedule(req,res)
+{
+  console.console.log("function me toh aya");
+          return res.json({
+              speech: 'Something went wrong!',
+              displayText: 'Something went wrong!',
+              source: 'game schedule'
+          });
+
+}
   //let reqUrl = encodeURI('http://theapache64.xyz:8080/movie_db/search?keyword=' + movieToSearch);
   /*http.get(reqUrl, (responseFromAPI) => {
 
