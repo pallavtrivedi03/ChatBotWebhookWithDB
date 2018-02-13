@@ -60,88 +60,22 @@ function getTeamStats(req,res)
 
 function getTeamSchedule(req,res)
 {
-  let g1 = new GameSchedule();
-  gameSchedule.date = "Feb 11 2018";
-  gameSchedule.opponent = "Minnesota";
-  gameSchedule.hasBeenPlayed = true;
-  gameSchedule.isWinner = false;
-  gameSchedule.score = "111-106";
-  gameSchedule.save(function(err,billSaved)
-  {
-    if(err)	return err;
-  });
+  // let gameSchedule = new GameSchedule();
+  // gameSchedule.date = "Feb 11 2018";
+  // gameSchedule.opponent = "Minnesota";
+  // gameSchedule.hasBeenPlayed = true;
+  // gameSchedule.isWinner = false;
+  // gameSchedule.score = "111-106";
+  // gameSchedule.save(function(err,billSaved)
+  // {
+  //   if(err)	return err;
+  // });
 
-  let g2 = new GameSchedule();
-  gameSchedule.date = "Feb 13 2018";
-  gameSchedule.opponent = "Dallas Mavericks";
-  gameSchedule.hasBeenPlayed = false;
-  gameSchedule.isWinner = false;
-  gameSchedule.score = "";
-  gameSchedule.save(function(err,billSaved)
-  {
-    if(err)	return err;
-  });
-
-  let g3 = new GameSchedule();
-  gameSchedule.date = "Feb 14 2018";
-  gameSchedule.opponent = "Houston Rockets";
-  gameSchedule.hasBeenPlayed = false;
-  gameSchedule.isWinner = false;
-  gameSchedule.score = "";
-  gameSchedule.save(function(err,billSaved)
-  {
-    if(err)	return err;
-  });
-
-  let g4 = new GameSchedule();
-  gameSchedule.date = "Feb 22 2018";
-  gameSchedule.opponent = "Oklahoma City";
-  gameSchedule.hasBeenPlayed = false;
-  gameSchedule.isWinner = false;
-  gameSchedule.score = "";
-  gameSchedule.save(function(err,billSaved)
-  {
-    if(err)	return err;
-  });
-
-  let g5 = new GameSchedule();
-  gameSchedule.date = "Feb 24 2018";
-  gameSchedule.opponent = "Los Angeles";
-  gameSchedule.hasBeenPlayed = false;
-  gameSchedule.isWinner = false;
-  gameSchedule.score = "";
-  gameSchedule.save(function(err,billSaved)
-  {
-    if(err)	return err;
-  });
-
-  let g6 = new GameSchedule();
-  gameSchedule.date = "Feb 26 2018";
-  gameSchedule.opponent = "Minnesota";
-  gameSchedule.hasBeenPlayed = false;
-  gameSchedule.isWinner = false;
-  gameSchedule.score = "";
-  gameSchedule.save(function(err,billSaved)
-  {
-    if(err)	return err;
-  });
-
-  let g7 = new GameSchedule();
-  gameSchedule.date = "Feb 27 2018";
-  gameSchedule.opponent = "Portland";
-  gameSchedule.hasBeenPlayed = false;
-  gameSchedule.isWinner = false;
-  gameSchedule.score = "";
-  gameSchedule.save(function(err,billSaved)
-  {
-    if(err)	return err;
-  });
-
-          // return res.json({
-          //     speech: 'This module is under development. Schedule will be available soon',
-          //     displayText: 'This module is under development. Schedule will be available soon',
-          //     source: 'game schedule'
-          // });
+          return res.json({
+              speech: 'This module is under development. Schedule will be available soon',
+              displayText: 'This module is under development. Schedule will be available soon',
+              source: 'game schedule'
+          });
 
 }
   //let reqUrl = encodeURI('http://theapache64.xyz:8080/movie_db/search?keyword=' + movieToSearch);
