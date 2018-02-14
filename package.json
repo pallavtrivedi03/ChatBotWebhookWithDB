@@ -11,9 +11,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^4.15.2",
     "body-parser": "^1.18.2",
-    "mongoose": "^4.11.13"
+    "date-and-time": "^0.6.2",
+    "express": "^4.15.2",
+    "mongoose": "^4.11.13",
+    "node-datetime": "^2.0.6"
   },
   "repository": {
     "type": "git",
